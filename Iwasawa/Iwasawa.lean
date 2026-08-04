@@ -307,7 +307,7 @@ theorem iwasawa {n : ℕ} (g : Matrix (Fin n) (Fin n) K) (hg : IsUnit g.det) :
   obtain ⟨ k, hk, h ⟩ := core A g hg;
   -- Now, g = k * b with b := k⁻¹ * g upper triangular. We need to show that b is invertible and upper triangular. In the code, k' = k⁻¹.
   rcases hk with ⟨ hk₁, k', hk'₁, hk'₂, hk'₃ ⟩;
-  refine ⟨ k', k * g, ?_, ?_, ?_, ?_ ⟩;
+  refine' ⟨ k', k * g, _, _, _, _⟩;
   · exact ⟨ hk'₁, k, hk₁, hk'₃, hk'₂ ⟩;
   · exact h;
   · have hkdet : IsUnit k.det := by
